@@ -2,14 +2,9 @@
 <html>
 <head>
     <title>RBC Character Selector</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <!-- <script src="random-character-selector.js"></script> -->
 
-    <style type="text/css">
-        #chosen-character {
-            font-size: 3em;
-        }
-    </style>
 
     <script type="text/javascript">
         const rbcchars = ["Adrian Pucey", "Adriana \"Addy\" Potter", "Alastor \"Mad-Eye\" Moody", "Albus Dumbledore", "Aldon Rosier", "Aled Flint", "Alesana Selwyn", "Animator Twins", "Antiope | Aileen Ross", "Aragog", "Arcturus \"Archie\" Black", "Augusta Longbottom", "Baby Qilin", "Basilisk", "Bellatrix Black Lestrange", "Bill \"Will\" Weasley", "Binny", "Blaise Zabini", "Caelum Lestrange", "Cedric Diggory", "Cho Chang", "Cora", "Count Aurel", "Countess Maricara", "Daphne Greengrass", "Diana Black", "Diary Voldemort (\"Voldiary\")", "Dobby", "The Dominion Jewel | Dom", "Draco Malfoy", "Edgar Krait", "Edgar Whitaker", "Edmund Rookwood", "Eleni Hurst", "Eric Albright", "Fawkes", "Fearless Frank", "Feiyan Shang", "Filius Flitwick", "Fleur Delacour", "Fred Weasley", "Gabrielle Delacour", "Gavril", "George Filmont", "George Weasley", "Giant Squid", "Ginny Weasley", "Goldflame", "Greystrike", "Griselda Marchbanks", "Hannah Abbott", "Harriett Potter | Rigel Black", "Hermione Granger", "Hogwarts", "Irina", "Jacob Owens", "James Potter", "John Dawlish", "Kasten", "Lee Jordan", "Leo Hurst", "Lily Evans Potter", "Lower Alleys Kids", "Lucius Malfoy", "Malcolm Hurst", "Marcus Flint", "Marek", "Margo", "Master Thompson", "Matheus Sousa", "Merriam Flint", "Millicent Bulstrode", "Minerva McGonagall", "Molly Weasley", "Monica Granger", "Narcissa Black Malfoy", "Neville Longbottom", "Newt Scamander", "Nymphadora Tonks", "Pansy Parkinson", "Percy Weasley", "Peter Pettigrew", "Poppy Pomfrey", "Rabid Ralph", "Regulus Black", "Remus Lupin", "Rispah Cooper", "The Rod of Zuriel", "Ron Weasley", "Rubeus Hagrid", "Severus Snape", "Silo", "Sirius Black", "Solom", "Sorting Hat", "Tahiil Diric Zahi", "Theodore Nott", "Tiberius Ogden", "Tom Marvolo Riddle", "Tracey Davis", "Treeslider", "The Unspeakables", "Viktor Krum", "Wendell Granger"];
@@ -40,21 +35,25 @@
     </script>
 </head>
 <body>
-<center>
-    <h1>RBC Random Character Selector</h1>
-    <h2>Options</h2>
-    <p>Select the groups of characters you would like included.</p>
-    <input type="checkbox" id="rbc-check" checked="true"> RBC Characters <br>
-    <input type="checkbox" id="revarc-check"> Rev Arc Characters <br>
-    <input type="checkbox" id="recursive-check"> Other Recursive Characters<br><br>
-
-    <p style="max-width: 30em;">Notes:<br>Currently, selecting only Rev Arc Characters or only Other Recursive Characters will result in characters that appear both in RBC and elsewhere to be excluded.</p>
-
-    <input type="button" name="select-char" value="Select a Character!" onclick="pick(this)">
-
-    <div>
-        <p id="chosen-character">?</p>
+    <div class="header">
+        <p class="section-name">The Rigel Black Chronicles</p>
+        <p><a href="index.html" class="index-link">Back to the RBC Index</a></p>
     </div>
-</center>  
+    <center><div class="body-content">
+        <h1>RBC Random Character Selector</h1>
+        <h2>Options</h2>
+        <p>Select the groups of characters you would like included.</p>
+        <input type="checkbox" id="rbc-check" checked="true"> RBC Characters <br>
+        <input type="checkbox" id="revarc-check"> Rev Arc Characters <br>
+        <input type="checkbox" id="recursive-check"> Other Recursive Characters<br><br>
+
+        <p class="char-selection-note">Notes:<br>Currently, selecting only Rev Arc Characters or only Other Recursive Characters will result in characters that appear both in RBC and elsewhere to be excluded.</p>
+
+        <input type="button" name="select-char" value="Select a Character!" onclick="pick(this)">
+
+        <div>
+            <p id="chosen-character">?</p>
+        </div>
+    </div></center>
 </body>
 </html>
