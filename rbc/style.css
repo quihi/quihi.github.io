@@ -1,7 +1,12 @@
+
+.character-result {
+    min-height: 9em;
+}
 #chosen-character {
     font-size: 3em;
 }
 .char-selection-note {
+    text-align: left;
     max-width: 30em;
 }
 
