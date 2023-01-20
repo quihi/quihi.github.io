@@ -3,36 +3,7 @@
 <head>
     <title>RBC Character Selector</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="random-character-selector.js"></script> -->
-
-
-    <script type="text/javascript">
-        const rbcchars = ["Adrian Pucey", "Adriana \"Addy\" Potter", "Alastor \"Mad-Eye\" Moody", "Albus Dumbledore", "Aldon Rosier", "Aled Flint", "Alesana Selwyn", "Animator Twins", "Antiope | Aileen Ross", "Aragog", "Arcturus \"Archie\" Black", "Augusta Longbottom", "Baby Qilin", "Basilisk", "Bellatrix Black Lestrange", "Bill \"Will\" Weasley", "Binny", "Blaise Zabini", "Caelum Lestrange", "Cedric Diggory", "Cho Chang", "Cora", "Count Aurel", "Countess Maricara", "Daphne Greengrass", "Diana Black", "Diary Voldemort (\"Voldiary\")", "Dobby", "The Dominion Jewel | Dom", "Draco Malfoy", "Edgar Krait", "Edgar Whitaker", "Edmund Rookwood", "Eleni Hurst", "Eric Albright", "Fawkes", "Fearless Frank", "Feiyan Shang", "Filius Flitwick", "Fleur Delacour", "Fred Weasley", "Gabrielle Delacour", "Gavril", "George Filmont", "George Weasley", "Giant Squid", "Ginny Weasley", "Goldflame", "Greystrike", "Griselda Marchbanks", "Hannah Abbott", "Harriett Potter | Rigel Black", "Hermione Granger", "Hogwarts", "Irina", "Jacob Owens", "James Potter", "John Dawlish", "Kasten", "Lee Jordan", "Leo Hurst", "Lily Evans Potter", "Lower Alleys Kids", "Lucius Malfoy", "Malcolm Hurst", "Marcus Flint", "Marek", "Margo", "Master Thompson", "Matheus Sousa", "Merriam Flint", "Millicent Bulstrode", "Minerva McGonagall", "Molly Weasley", "Monica Granger", "Narcissa Black Malfoy", "Neville Longbottom", "Newt Scamander", "Nymphadora Tonks", "Pansy Parkinson", "Percy Weasley", "Peter Pettigrew", "Poppy Pomfrey", "Rabid Ralph", "Regulus Black", "Remus Lupin", "Rispah Cooper", "The Rod of Zuriel", "Ron Weasley", "Rubeus Hagrid", "Severus Snape", "Silo", "Sirius Black", "Solom", "Sorting Hat", "Tahiil Diric Zahi", "Theodore Nott", "Tiberius Ogden", "Tom Marvolo Riddle", "Tracey Davis", "Treeslider", "The Unspeakables", "Viktor Krum", "Wendell Granger"];
-        const revarcchars = ["Alanna Trebond", "Alex Willoughby", "Alexander Chang Weasley", "Alice Eve Rosier", "Baird Queenscove", "Cedric Draco Rosier", "Christina Blake", "Cleon Kennan", "Daine Sarrasri", "Edmund Blake Rosier", "Evan Rosier", "Faleron King", "Fei Long Lin", "Francesca Lam", "Gerhardt Riemann", "Graeme Queenscove", "Gregor Aleksandrovich Lin", "Jessa Queenscove", "John Kowalski", "Justice (Revolutionary Arc)", "Keladry Mindelan", "Lina Avery | Eveline Rosier", "Marija Aleksandrovna Lin", "Neal Queenscove", "Numair Salmalín", "Owen Jesslaw", "Song Mei Ling", "Tatiana Aleksandrovna Lin", "Will Queenscove"];
-        const otherchars = ["Lorraine<br>(all that glitters is not gold)", "Anastasia \"Asya\" Drozdova<br>(Black and Blue and Who Knows Which Is Which and Who Is Who?)", "Alicia Spinnet", "Dudley Dursley", "Elliot Bell (TBoBM)", "Franklin Bell (TBoBM)", "Gilbert Bell (TBoBM)", "Helena Bell (TBoBM)", "Katie Bell", "Leanne Lock (TBoBM)", "Nilsy (TBoBM)", "Oliver Wood"];
-
-        function pick(button) {
-            var total = 0;
-            if (document.getElementById("rbc-check").checked) total += rbcchars.length;
-            if (document.getElementById("revarc-check").checked) total += revarcchars.length;
-            if (document.getElementById("recursive-check").checked) total += otherchars.length;
-
-            var index = Math.floor(Math.random() * total);
-            if (document.getElementById("rbc-check").checked && index < rbcchars.length) {
-                document.getElementById("chosen-character").innerHTML = rbcchars[index];
-            }
-            else {
-                if (document.getElementById("rbc-check").checked) index -= rbcchars.length;
-                if (document.getElementById("revarc-check").checked && index < revarcchars.length) {
-                    document.getElementById("chosen-character").innerHTML = revarcchars[index];
-                }
-                else {
-                    if (document.getElementById("revarc-check").checked) index -= revarcchars.length;
-                    document.getElementById("chosen-character").innerHTML = otherchars[index];
-                }
-            }
-        }
-    </script>
+    <script src="random-character-selector.js"></script>
 </head>
 <body>
     <div class="header">
@@ -43,16 +14,25 @@
         <h1>RBC Random Character Selector</h1>
         <h2>Options</h2>
         <p>Select the groups of characters you would like included.</p>
-        <input type="checkbox" id="rbc-check" checked="true"> RBC Characters <br>
-        <input type="checkbox" id="revarc-check"> Rev Arc Characters <br>
-        <input type="checkbox" id="recursive-check"> Other Recursive Characters<br><br>
+        <input type="checkbox" onclick="update_set(this)" id="rbc-check"> <label for="rbc-check">RBC Characters</label> <br>
+        <input type="checkbox" onclick="update_set(this)" id="main-revarc-check"> <label for="main-revarc-check">Noteworthy Rev Arc Characters</label> <br>
+        <input type="checkbox" onclick="update_set(this)" id="more-revarc-check"> <label for="more-revarc-check">Minor Rev Arc Characters</label> <br>
+        <!-- <input type="checkbox" onclick="update_set(this)" id="rec-revarc-check"> <label for="rec-revarc-check">Recursive Rev Arc Characters</label> <br> -->
+        <input type="checkbox" onclick="update_set(this)" id="recursive-check"> <label for="recursive-check">Other Recursive Characters</label> <br><br>
 
-        <p class="char-selection-note">Notes:<br>Currently, selecting only Rev Arc Characters or only Other Recursive Characters will result in characters that appear both in RBC and elsewhere to be excluded.</p>
+        <input type="button" name="select-char" value="Select a Character!" onclick="pick()">
 
-        <input type="button" name="select-char" value="Select a Character!" onclick="pick(this)">
-
-        <div>
+        <div class="character-result">
             <p id="chosen-character">?</p>
+        </div>
+
+        <div class="char-selection-note">
+            <p><strong>Notes:</strong></p>
+            <ul>
+                <li>This does not actually include all characters, especially for RBC. Feel free to send me a list of characters that are missing and I'll add them sometime.</li>
+                <li>Noteworthy Rev Arc characters may be less major and more I can remember who they are, or think they're worth including, or someone has requested fic about them. The minor character list includes nearly any name I saw mentioned a single time.</li>
+                <!-- <li>Q: Why did I attempt to make a list of every character Kitszah ever mentions once? A: I didn't realize there were so many. If there's repeats, it's because I couldn't immediately tell what first and last names went together, and some last names are missing due to insufficient data to connect them with first names.</li> -->
+            </ul>
         </div>
     </div></center>
 </body>
