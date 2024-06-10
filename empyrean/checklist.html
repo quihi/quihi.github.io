@@ -40,8 +40,14 @@
                 }
             }
             document.getElementById('score').textContent = total + " / 45";
-}
+        }
 
+        function reset() {
+            boxes = document.getElementsByClassName("word");
+            for (var i = 0; i < boxes.length; i++) {
+                boxes[i].checked = false;
+            }
+        }
     </script>
 </head>
 <body>
@@ -108,6 +114,7 @@ Nothing is saved, so please make sure to take screenshots of your checklist!</te
         </ul>
     </div>
 
-    <br><button onclick="calculate()" class="text-button">Calculate Score</button> <div class="column" id="score"></div>
+    <br><button onclick="calculate()" class="text-button">Calculate Score</button> <div class="column" id="score"></div><br><br>
+    <button onclick="reset()" class="text-button">Reset Checklist</button>
 </body>
 </html>
