@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A Quick Problem Solving Puzzle</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="pattern-puzzle.js"></script> 
+</head>
+<body>
+    <div>
+        <p>I'm thinking of a rule about sequences of three numbers. Some sequences obey the rule, and others do not. You have to try to guess what the rule is. To do this, you can guess sequences of numbers, and I'll tell you if they fit the pattern.</p>
+        <p>To start, the sequence 2, 4, 6 obeys the rule.</p>
+    </div>
+    <div class="guess">
+        <input type="text" class="number">2</input>
+        <input type="text" class="number">4</input>
+        <input type="text" class="number">6</input>
+        <button onclick="check(this)" class="yes">Yes!</button>
+    </div>
+
+    <div>
+        <p>Now it's your turn to guess!</p>
+
+        <div class="guess">
+            <input type="text" class="number"></input>
+            <input type="text" class="number"></input>
+            <input type="text" class="number"></input>
+            <button onclick="check(this)" class="check">Check</button>
+            <div></div>
+        </div>
+    </div>
+
+    <div>
+        <p>If you're ready to guess the rule, type your answer into this box and click the button.</p>
+        <textarea id="makeyourguess"></textarea>
+        <button onclick="showanswer()">Show me the answer!</button>
+        <div id="theexplanation">
+            <p>The rule: Each numbers in the sequence must be larger than the previous one.</p>
+            <p>Even something like "-10523.652, -9, 141.52311111" fits!</p>
+            <p>Did you guess the rule correctly?</p>
+        </div>
+    </div>
+
+</body>
+</html>
