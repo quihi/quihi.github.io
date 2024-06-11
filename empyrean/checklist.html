@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Book Hunt #1</title>
+    <title>Rider's Quadrant Book Hunt #1</title>
     <style type="text/css">
+        .wholepage {
+            width: 475px;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
         .column {
             border: 1px solid black;
             width: 130px;
@@ -47,11 +53,16 @@
             for (var i = 0; i < boxes.length; i++) {
                 boxes[i].checked = false;
             }
+            document.getElementById('score').textContent = "0 / 45";
         }
     </script>
 </head>
 <body>
+<div class="wholepage">
     <h1>Rider's Quadrant Book Hunt #1</h1>
+
+    <p>I am not working late because I'm a singer. I am doing it, because the turtle ate my underwear instead of the chicken wings and lettuce I gave him. If you ever wanted a pet, this one is free. If only he wasn't so cute!</p>
+
     <textarea class="blanknotes">You can write notes such as the book title and page number here.
 
 Nothing is saved, so please make sure to take screenshots of your checklist!</textarea>
@@ -116,5 +127,6 @@ Nothing is saved, so please make sure to take screenshots of your checklist!</te
 
     <br><button onclick="calculate()" class="text-button">Calculate Score</button> <div class="column" id="score"></div><br><br>
     <button onclick="reset()" class="text-button">Reset Checklist</button>
+</div>
 </body>
 </html>
