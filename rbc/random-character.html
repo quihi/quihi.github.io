@@ -15,9 +15,10 @@
         <h2>Options</h2>
         <p>Select the groups of characters you would like included.</p>
         <input type="checkbox" onclick="update_set(this)" id="rbc-check"> <label for="rbc-check">RBC Characters</label> <br>
-        <input type="checkbox" onclick="update_set(this)" id="main-revarc-check"> <label for="main-revarc-check">Noteworthy Rev Arc Characters</label> <br>
+        <input type="checkbox" onclick="update_set(this)" id="main-revarc-check"> <label for="main-revarc-check">Rev Arc Characters</label> <br>
         <input type="checkbox" onclick="update_set(this)" id="more-revarc-check"> <label for="more-revarc-check">Minor Rev Arc Characters</label> <br>
         <!-- <input type="checkbox" onclick="update_set(this)" id="rec-revarc-check"> <label for="rec-revarc-check">Recursive Rev Arc Characters</label> <br> -->
+        <input type="checkbox" onclick="update_set(this)" id="durmstrang-check"> <label for="durmstrang-check">Durmstrang Divergence Characters</label> <br>
         <input type="checkbox" onclick="update_set(this)" id="recursive-check"> <label for="recursive-check">Other Recursive Characters</label> <br><br>
 
         <input type="button" name="select-char" value="Select a Character!" onclick="pick()">
@@ -29,8 +30,10 @@
         <div class="char-selection-note">
             <p><strong>Notes:</strong></p>
             <ul>
-                <li>This does not actually include all characters, especially for RBC. Feel free to send me a list of characters that are missing and I'll add them sometime.</li>
-                <li>Noteworthy Rev Arc characters may be less major and more I can remember who they are, or think they're worth including, or someone has requested fic about them. The minor character list includes nearly any name I saw mentioned a single time.</li>
+                <li>This does not actually include all characters. Feel free to send me characters that are missing and I'll add them sometime.</li>
+                <li>The RBC and Rev Arc lists both include several characters.</li>
+                <li>The Durmstrang Divergence list does not duplicate the British characters.</li>
+                <!-- <li>Noteworthy Rev Arc characters may be less major and more I can remember who they are, or think they're worth including, or someone has requested fic about them. The minor character list includes nearly any name I saw mentioned a single time.</li> -->
                 <!-- <li>Q: Why did I attempt to make a list of every character Kitszah ever mentions once? A: I didn't realize there were so many. If there's repeats, it's because I couldn't immediately tell what first and last names went together, and some last names are missing due to insufficient data to connect them with first names.</li> -->
             </ul>
         </div>
